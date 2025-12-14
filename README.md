@@ -5,78 +5,91 @@
 ![FAISS](https://img.shields.io/badge/FAISS-Search-green)
 ![NLP](https://img.shields.io/badge/NLP-SentenceTransformers-orange)
 
-An intelligent job recommendation engine that leverages Natural Language Processing (NLP) and Semantic Search to bridge the gap between candidates and their ideal roles. By analyzing the content of resumes, this system suggests the most relevant job positions based on extracted skills and experience.
+An AI-driven job recommendation system that uses Natural Language Processing (NLP) and semantic search techniques to match resumes with relevant job opportunities. The system analyzes resume content and job descriptions to recommend roles based on contextual similarity rather than simple keyword matching.
+
+---
 
 ## Features
 
-* **PDF Resume Support:** Upload your resume in PDF format for instant analysis.
-* **AI-Driven Matching:** Utilizes SentenceTransformer to create deep semantic embeddings of resumes and job descriptions.
-* **High-Speed Search:** Powered by FAISS (Facebook AI Similarity Search) for efficient similarity retrieval.
-* **Smart Filtering:** Implements TF-IDF pre-filtering to narrow down the search space to the most relevant candidates before semantic matching.
-* **Interactive UI:** A clean, user-friendly web interface built with Streamlit.
+- **PDF Resume Parsing:** Upload resumes in PDF format for automated text extraction.
+- **Semantic Matching:** Uses SentenceTransformer models to generate semantic embeddings of resumes and job descriptions.
+- **Efficient Similarity Search:** FAISS enables fast and scalable vector similarity search.
+- **Search Space Reduction:** TF-IDF pre-filtering narrows down candidate jobs before semantic ranking.
+- **Interactive Web Interface:** Clean and user-friendly interface built with Streamlit.
 
 ---
 
 ## Tech Stack
 
-* **Language:** Python
-* **Interface:** Streamlit
-* **Vector Search:** FAISS (Facebook AI Similarity Search)
-* **Embeddings:** Sentence Transformers (Hugging Face)
-* **PDF Processing:** PyMuPDF
-* **Text Analysis:** scikit-learn (TF-IDF)
+- **Programming Language:** Python  
+- **Frontend:** Streamlit  
+- **Vector Search:** FAISS (Facebook AI Similarity Search)  
+- **Embeddings:** Sentence Transformers (Hugging Face)  
+- **PDF Processing:** PyMuPDF  
+- **Text Processing:** scikit-learn (TF-IDF)
 
 ---
 
 ## Installation & Setup
 
-Follow these steps to set up the project locally.
+Follow the steps below to run the project locally.
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/YomnaWaleed/job-recommendation-system-ai.git](https://github.com/YomnaWaleed/job-recommendation-system-ai.git)
-cd job-recommendation-system-ai
-
+git clone https://github.com/Mahesh-git888/job_recomendation_system.git
+cd job_recomendation_system
 2. Install Dependencies
-Ensure you have Python installed, then run:
 
-Bash
+Ensure Python 3.8+ is installed, then run:
 
 pip install -r requirements.txt
-3. Run the Application
-Launch the Streamlit interface:
 
-Bash
+3. Run the Application
+
+Launch the Streamlit application:
 
 streamlit run streamlit.py
-4. Access the Interface
-Open your browser and navigate to the local URL provided in the terminal (usually http://localhost:8501).
+
+4. Access the Application
+
+Open your browser and navigate to:
+
+http://localhost:8501
 
 How It Works
-Resume Parsing: The user uploads a PDF resume. PyMuPDF extracts the raw text.
 
-TF-IDF Filtering: To improve performance, scikit-learn uses TF-IDF to filter out irrelevant job descriptions, reducing the dataset to a manageable size.
+Resume Upload & Parsing
+Users upload a PDF resume. Text is extracted using PyMuPDF.
 
-Semantic Embedding: The SentenceTransformer model converts both the resume text and the filtered job descriptions into high-dimensional vector embeddings.
+TF-IDF Pre-Filtering
+TF-IDF similarity is used to remove clearly irrelevant job descriptions, reducing the search space.
 
-Vector Search: FAISS calculates the similarity distance between the resume vector and job vectors to find the closest semantic matches.
+Semantic Embedding Generation
+Resume text and filtered job descriptions are converted into dense vector embeddings using SentenceTransformer models.
 
-Recommendation: The top-ranked jobs are displayed to the user.
+Vector Similarity Search
+FAISS performs fast similarity search to identify the most relevant job matches.
+
+Recommendation Display
+The top-ranked job recommendations are displayed in the Streamlit interface.
 
 Dataset
-The system relies on a dataset of job listings.
 
-File Name: JobsFE.csv
+File: JobsFE.csv
 
-Content: Job descriptions, required skills, and role details.
+Description: Contains job titles, descriptions, and required skills.
 
-Note: Ensure this file is located in the root directory of the project for the application to function correctly.
+Note: The dataset must be present in the root directory for the application to function correctly.
 
-Roadmap & Future Improvements
-[ ] Support for additional resume formats (DOCX, TXT).
+Future Enhancements
 
-[ ] Advanced filtering options (Location, Salary range, Experience level).
+Support for additional resume formats (DOCX, TXT)
 
-[ ] Integration with live LinkedIn job postings.
+Advanced filtering options (location, salary, experience level)
 
-[ ] User feedback loop to improve recommendation accuracy over time.
+Integration with live job posting APIs
+
+User feedback loop to improve recommendation accuracy
+
+
+-
